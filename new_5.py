@@ -61,7 +61,7 @@ colors = {
 }
 app.layout = html.Div(children=[
     html.H1(
-        children="Wizikey",
+        children="Google",
         style={
             "textAlign": "center",
             'backgroundColor': colors['text']
@@ -167,7 +167,7 @@ def update_graph(n_clicks,start_date, end_date, value):
 
 
     return dcc.Tabs([
-        dcc.Tab(label='Before Joining Wizikey '+'till '+str(end_date), children=[
+        dcc.Tab(label='Before Joining Google '+'till '+str(end_date), children=[
             dcc.Graph(
         id = "pieGraph",
         figure = {
@@ -253,7 +253,7 @@ def update_graph(n_clicks,start_date, end_date, value):
        
         
     ]),
-    dcc.Tab(label='After Joining Wizikey '+'after '+str(end_date), children=[
+    dcc.Tab(label='After Joining Google '+'after '+str(end_date), children=[
             dcc.Graph(
         id = "pieGraph1",
         figure = {
