@@ -1,0 +1,27 @@
+Dash is a Python framework for building web applications. We will use this framework to build a little Dashboard from scratch. Dash will allow us to build a beautiful dashboard without writing any line of hmtl, css or javascript.
+Let’s start and import some packages.
+
+
+dash_core_components , dash _html_components and dash_bootstrap_components will enable to generate HTML and CSS contents using Python. Plotly packages will be very useful when we want to display nice graphs which are the dashboard core components . External style sheets are just CSS sheets that will make our dashboard elegant.
+
+The first element that we will implement in our web application is the navigation bar including the button that will display a modal.
+
+We start by define a variable that will contain all the navigation bar elements. To create it we use the dash bootstrap components “NavbarSimple”, you can find all the bootstrap components on this page. This navigation bar contains a single button with the id “openBlog”. Ids are very important because it allows you to identify which button you clicked in the callback and associate it to an action. Here the action is to display the modal.
+Now that we have the navigation bar in our “navbar” variable we will pass it to our app layout and then run the server locally in order to see what we have built.
+
+Now just run your python code and you should be able to see the result running on http://127.0.0.1:8050/.
+You can notice that you can click on the button but you can’t see the modal show up, it’s because we didn’t set any callback. Then come back to your code and let’s just add it with the function associate to it.
+
+Bootstrap grid system allows us to organize page’s content in rows and columns. It allows up to 12 columns across the page, we don’t have to use all the twelve column individually, we can group them to use wider columns. Bootstrap grid system is responsive which means that contents will be re-arranged depending on the screen size. On small screen each column will be stacked on top of each other.
+Create the card, as we need 4 cards we will just create one function that takes the title and the content of the card in parameters
+
+Now that our cards are created we just have to put them in the row and choose the size for the columns. dbc.Row and dbc.Col are dash bootstrap components to define a row that contains 4 cards columns. The parameter “md” passed on columns components is to set the size for your columns trough media queries.
+
+Finally pass everything to our app layout.
+
+If you want to use Plotly to display your graphs, you will need to create an account on Plotly and connect to their API. You can find all the documentations on how to connect their API and start using Plotly here.
+
+Here as we want to display a graph we need to call the dash core component “Graph”. The Graph id use the same principe as we used to identify buttons in the callback function, if we need to change the graph when we make an action. Figure parameter contains all the graph informations such as the data represented by a list of values and the labels associated to it, but also the graph type etc. Feel free to modify anything you want to suit your needs.
+You can find all types of graphs here.
+
+Now that we finished designing graphs, we have to create the second row of the dashboard and pass all the contents to our app layout. Feel free to create as many graphs as you need in the second row.
